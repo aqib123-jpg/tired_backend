@@ -7,15 +7,18 @@ app.use(cors());
 app.use(express.json());
 
 const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'MySqL321@', 
-    database: 'CHECKINGECOMMERCE'
+  host: process.env.DB_HOST, 
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  port: process.env.DB_PORT
 });
-
 db.connect(err => {
-  if (err) throw err;
-  console.log('MySQL connected');
+  if (err) {
+      console.error('Error connecting to MySQL:', err.message);
+      process.exit(1); // Exit if connection fails
+  }
+  console.log('Connected to MySQL database');
 });
 
 db.query(
