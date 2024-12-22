@@ -35,22 +35,24 @@ db.query(
 );
 
 app.post('/api/add-user', (req, res) => {
-  console.log("inside it ");
-  const { name, number, age } = req.body;
-  const query = 'INSERT INTO USERDATA (NAME, NUMBER, AGE) VALUES (?, ?, ?)';
-  db.query(query, [name, number, age], (err) => {
-    if (err) throw err;
-    res.status(201).json({ message: 'User added successfully' });
-  });
+  res.send('Adding User is Correct');
+  // console.log("inside it ");
+  // const { name, number, age } = req.body;
+  // const query = 'INSERT INTO USERDATA (NAME, NUMBER, AGE) VALUES (?, ?, ?)';
+  // db.query(query, [name, number, age], (err) => {
+  //   if (err) throw err;
+  //   res.status(201).json({ message: 'User added successfully' });
+  // });
 });
 
 app.get('/api/users', (req, res) => {
-  console.log("inside the request");
-  const query = 'SELECT * FROM USERDATA';
-  db.query(query, (err, results) => {
-    if (err) throw err;
-    res.json(results);
-  });
+  res.send('Getting User is Correct');
+  // console.log("inside the request");
+  // const query = 'SELECT * FROM USERDATA';
+  // db.query(query, (err, results) => {
+  //   if (err) throw err;
+  //   res.json(results);
+  // });
 });
 
 const port = process.env.PORT || 5000;
