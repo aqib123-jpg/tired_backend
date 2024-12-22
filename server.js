@@ -95,17 +95,17 @@ app.get('/', (req, res) => {
     res.send('Welcome to the Home Page!');
 });
 
-app.get('/api/about', (req, res) => {
-    res.send('This is the About Page!');
-});
+// app.get('/api/about', (req, res) => {
+//     res.send('This is the About Page!');
+// });
 
-app.get('/api/contact', (req, res) => {
-    res.send('This is the Contact Page!');
-});
+// app.get('/api/contact', (req, res) => {
+//     res.send('This is the Contact Page!');
+// });
 
-app.get('/api/services', (req, res) => {
-    res.send('Welcome to our Services Page!');
-});
+// app.get('/api/services', (req, res) => {
+//     res.send('Welcome to our Services Page!');
+// });
 
 // 404 route for undefined paths
 app.use((req, res) => {
